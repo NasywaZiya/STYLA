@@ -1,0 +1,147 @@
+.auth-page {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* OVERLAY */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+/* HERO TEXT */
+.hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 90px;
+  letter-spacing: 10px;
+  font-weight: bold;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 6000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-card {
+  background: #fff;
+  padding: 45px 30px;
+  width: 100%;
+  max-width: 360px;
+  position: relative;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+.modal-card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* INPUT */
+.modal-card input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.modal-card input:focus {
+  border-color: #000;
+}
+
+/* BUTTON */
+.btn-auth {
+  width: 100%;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.btn-auth:hover {
+  background: #222;
+}
+
+/* FORGOT PASSWORD */
+.forgot-pass-container {
+  text-align: right;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+.forgot-pass-link {
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+}
+
+.forgot-pass-link:hover {
+  color: #000;
+}
+
+/* SWITCH LOGIN/REGISTER */
+.switch-txt {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #444;
+}
+
+.switch-txt a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.switch-txt a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 45px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .modal-card {
+    padding: 35px 25px;
+  }
+}

@@ -1,0 +1,736 @@
+/* ==========================================
+   STYLING UTAMA (Sesuai Gaya Desain Cart STYLA)
+   ========================================== */
+
+body {
+  overflow-x: hidden;
+  background-color: #f3f4f6;
+}
+
+.checkout-page-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1f2937;
+  padding: 16px;
+}
+
+.checkout-content-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Bagian Judul Atas */
+.checkout-page-heading-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  padding: 0 4px;
+}
+
+.checkout-main-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.checkout-sub-step-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+.checkout-empty-state {
+  text-align: center;
+  padding: 64px 32px;
+}
+
+.checkout-empty-icon {
+  margin: 0 auto 24px;
+  color: #9ca3af;
+  display: block;
+}
+
+.checkout-empty-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.checkout-empty-text {
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+/* ==========================================
+   DESAIN BAR PROSES (STEPPER)
+   ========================================== */
+.checkout-progress-stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 24px 16px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.stepper-node-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.stepper-circle-housing {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.stepper-status-ball {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+  z-index: 3;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stepper-connecting-line {
+  position: absolute;
+  height: 2px;
+  background: #e5e7eb;
+  width: 100%;
+  left: 50%;
+  top: 16px;
+  z-index: 1;
+}
+
+.stepper-text-label {
+  font-size: 13px;
+  color: #9ca3af;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+
+.stepper-node-item.step-active .stepper-status-ball {
+  background: #000000;
+  color: #ffffff;
+}
+
+.stepper-node-item.step-active .stepper-text-label {
+  color: #000000;
+  font-weight: 700;
+}
+
+.stepper-node-item.step-completed .stepper-status-ball {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.stepper-node-item.step-completed .stepper-text-label {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.stepper-node-item.step-completed .stepper-connecting-line {
+  background: #10b981;
+}
+
+@media (max-width: 640px) {
+  .stepper-text-label {
+    display: none;
+  }
+
+  .stepper-node-item.step-active .stepper-text-label {
+    display: block;
+    position: absolute;
+    top: 38px;
+  }
+
+  .checkout-progress-stepper {
+    padding-bottom: 38px;
+  }
+}
+
+/* ==========================================
+   LAYOUT GRID UTAMA
+   ========================================== */
+.checkout-dual-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Langkah 4: paksa grid jadi satu kolom tengah ── */
+.checkout-dual-grid:has(.success-center-panel) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout-dual-grid:has(.success-center-panel) .checkout-left-form-column {
+  width: 100%;
+  max-width: 560px;
+}
+
+.section-block-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #0f172a;
+}
+
+.premium-content-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Form Fields */
+.input-field-group {
+  margin-bottom: 18px;
+}
+
+.input-field-group.dual-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.input-field-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.input-field-group input,
+.input-field-group textarea,
+.input-field-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #0f172a;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input-field-group input:focus,
+.input-field-group textarea:focus,
+.input-field-group select:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+.premium-checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #4b5563;
+}
+
+/* Pemilihan Kurir */
+.courier-selection-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.courier-option-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.courier-option-box.selected {
+  border-color: #000000;
+  box-shadow: 0 0 0 1px #000000;
+}
+
+.courier-option-box input[type="radio"] {
+  display: none;
+}
+
+.courier-details {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.courier-emoji {
+  font-size: 20px;
+}
+
+.courier-title-text {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+
+.courier-delivery-est {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.courier-rate-tag {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Pemilihan Pembayaran */
+.payment-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.payment-method-tile {
+  border: 1px solid #e5e7eb;
+  padding: 18px 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-method-tile input {
+  display: none;
+}
+
+.payment-method-tile.tile-active {
+  border-color: #000000;
+  font-weight: 600;
+  box-shadow: 0 0 0 1px #000000;
+}
+
+/* Review Invoice */
+.review-invoice-card {
+  padding: 8px 0;
+}
+
+.invoice-data-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+  gap: 16px;
+}
+
+.invoice-data-row:last-child {
+  border-bottom: none;
+}
+
+/* Tombol Aksi */
+.primary-action-button {
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.primary-action-button:hover {
+  opacity: 0.9;
+}
+
+.navigation-buttons-flex {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.secondary-nav-btn {
+  flex: 1;
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.primary-nav-btn {
+  flex: 1;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.primary-nav-btn.success-color {
+  background: #10b981;
+}
+
+/* ==========================================
+   STEP 4 – SUCCESS STATE
+   ========================================== */
+.success-center-panel {
+  text-align: center;
+  padding: 40px 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+}
+
+.success-badge-circle {
+  width: 64px;
+  height: 64px;
+  background: #d1fae5;
+  color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 20px auto;
+}
+
+.success-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+.order-result-card {
+  text-align: left;
+  font-size: 15px;
+  color: #374151;
+  background-color: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 32px auto;
+}
+
+.order-result-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.order-number-value {
+  font-weight: 700;
+  color: #111827;
+}
+
+.order-status-value {
+  color: #059669;
+  font-weight: 600;
+}
+
+.order-result-divider {
+  margin: 15px 0;
+  border-top: 1px dashed #d1d5db;
+}
+
+.order-total-row {
+  font-size: 17px;
+}
+
+.order-total-value {
+  font-weight: 700;
+}
+
+.success-note {
+  margin-bottom: 20px;
+  color: #6b7280;
+}
+
+.success-action-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.success-btn-copy {
+  width: 100%;
+  padding: 12px;
+  background-color: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.success-btn-copy:hover {
+  opacity: 0.9;
+}
+
+.success-btn-track {
+  width: 100%;
+  padding: 12px;
+  background-color: #111827;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.success-btn-track:hover {
+  opacity: 0.9;
+}
+
+.success-btn-back {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  color: #374151;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.success-btn-back:hover {
+  background-color: #f9fafb;
+}
+
+/* ==========================================
+   ITEM BELANJA & BREAKDOWN PANEL
+   ========================================== */
+.mobile-only-summary-box,
+.desktop-sticky-summary-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.desktop-sticky-summary-card {
+  display: none;
+}
+
+.sidebar-summary-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.sidebar-loading-text {
+  text-align: center;
+  color: #9ca3af;
+}
+
+.checkout-item-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.checkout-item-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.checkout-item-meta {
+  flex: 1;
+}
+
+.checkout-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.checkout-item-subtext {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.checkout-item-pricing {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.checkout-breakdown-panel {
+  margin-top: 20px;
+  border-top: 1px dashed #e5e7eb;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.discount-text {
+  color: #ef4444;
+}
+
+.grand-total-text {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+}
+
+/* Animasi Perpindahan Step */
+.fade-in-animation {
+  animation: viewFadeIn 0.25s ease-out;
+}
+
+@keyframes viewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Validasi error */
+.field-error-text {
+  display: block;
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* Disabled button */
+.primary-action-button:disabled,
+.primary-nav-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   RESPONSIF DESKTOP
+   ========================================== */
+@media (min-width: 992px) {
+  .checkout-page-container {
+    padding: 40px 20px;
+  }
+
+  .stepper-node-item {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .stepper-circle-housing {
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  .stepper-connecting-line {
+    width: calc(100% - 130px);
+    left: calc(50% + 65px);
+    top: 16px;
+  }
+
+  .stepper-text-label {
+    display: block !important;
+    font-size: 14px;
+  }
+
+  .checkout-dual-grid {
+    display: grid;
+    grid-template-columns: 7fr 4fr;
+    align-items: start;
+    gap: 32px;
+  }
+
+  /* ── Langkah 4 di desktop: override grid, paksa center ── */
+  .checkout-dual-grid:has(.success-center-panel) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .checkout-dual-grid:has(.success-center-panel) .checkout-left-form-column {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .checkout-left-form-column .mobile-only-summary-box {
+    display: none !important;
+  }
+
+  .desktop-sticky-summary-card {
+    display: block;
+    position: sticky;
+    top: 24px;
+  }
+
+  .payment-selection-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
